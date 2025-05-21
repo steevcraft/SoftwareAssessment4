@@ -35,7 +35,7 @@ public class FileManager {
 		return true;
 	}
 	
-	public String updatePerson(Person person) {
+	public String updatePerson(String personID) {
 		
 		return "Success";
 	}
