@@ -1,0 +1,27 @@
+package Testing;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import RoadRegistry.Person;
+
+class TestBook {
+
+	@Test
+	public static void main(String[] args) {
+		Person person = new Person();
+		
+		System.out.println();
+		
+		try{
+			assertEquals("Success", person.addPerson());
+			System.out.println("Add Person a Success");
+			assertEquals("Fail", person.addPerson());
+			System.out.println("Add Person Fail");
+		} catch(AssertionError e){
+		  String message = e.getMessage();
+		}
+		
+	}
+
+}

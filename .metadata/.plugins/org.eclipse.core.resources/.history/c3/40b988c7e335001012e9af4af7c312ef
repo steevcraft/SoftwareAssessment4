@@ -1,0 +1,7 @@
+package Testing;
+
+import org.junit.jupiter.api.Assertions.assertEquals;
+
+public class Testing {
+
+}

@@ -1,0 +1,21 @@
+package Testing;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import RoadRegistry.Person;
+
+class Tests {
+
+	@Test
+	public static void main(String[] args) {
+		Person person = new Person();
+		
+		System.out.println();
+		assertEquals("Success", person.addPerson());
+		
+		
+	}
+
+}
