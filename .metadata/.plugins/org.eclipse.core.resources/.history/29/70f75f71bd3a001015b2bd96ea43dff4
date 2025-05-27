@@ -37,7 +37,7 @@ class Tests {
 	}
 	
 	public static void FileManagerTests() {
-		FileManager file = new FileManager("tests2.txt");
+		FileManager file = new FileManager("tests.txt");
 		ArrayList<DemeritPoint> demeritPoints = new ArrayList<DemeritPoint>();
 		demeritPoints.add(new DemeritPoint("Yesterday", 7));
 		Person testPerson = new Person("person2", "John", "Smith", "100 Road Street, Melbourne", "10-10-2001", demeritPoints, false);

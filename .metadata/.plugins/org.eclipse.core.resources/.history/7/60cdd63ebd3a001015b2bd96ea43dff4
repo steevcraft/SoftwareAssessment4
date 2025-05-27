@@ -38,7 +38,7 @@ public class FileManager {
 		      while (myReader.hasNextLine()) {
 		    	  String[] values = myReader.nextLine().split(",");
 		    	  String[] readPoints = myReader.nextLine().split(",");
-		    	  if(values[0].equals(personID)) {
+		    	  if(values[0] == personID) {
 		    		  ArrayList<DemeritPoint> points = new ArrayList<DemeritPoint>();
 		   
 		    		  for(int i=0;i<readPoints.length/2;i++) {

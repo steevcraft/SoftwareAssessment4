@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -37,17 +36,7 @@ public class FileManager {
 		      Scanner myReader = new Scanner(new FileReader(filename));
 		      while (myReader.hasNextLine()) {
 		    	  String[] values = myReader.nextLine().split(",");
-		    	  String[] readPoints = myReader.nextLine().split(",");
-		    	  if(values[0].equals(personID)) {
-		    		  ArrayList<DemeritPoint> points = new ArrayList<DemeritPoint>();
-		   
-		    		  for(int i=0;i<readPoints.length/2;i++) {
-		    			  points.add(new DemeritPoint(readPoints[i*2],Integer.parseInt(readPoints[i*2+1])));
-		    		  }
-		    		  boolean isSus = (values[5].equals("true"));
-		    		  person = new Person(personID, values[1], values[2], values[3], values[4], points, isSus);
-		    	  }
-		    	  
+		    	  System.out.println(values[0]);
 		      }
 		      myReader.close();
 		    } catch (FileNotFoundException e) {
