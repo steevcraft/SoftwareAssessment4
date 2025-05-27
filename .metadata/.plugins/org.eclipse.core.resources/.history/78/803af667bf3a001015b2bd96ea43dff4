@@ -180,39 +180,7 @@ public class FileManager {
 		return "Success";
 	}
 	
-	public String addDemeritPoint(String personID, DemeritPoint point) {
-		ArrayList<Person> people = new ArrayList<Person>();
-		try {
-		      Scanner myReader = new Scanner(new FileReader(filename));
-		      
-		      while (myReader.hasNextLine()) {
-		    	  String[] values = myReader.nextLine().split(",");
-		    	  String[] readPoints = myReader.nextLine().split(",");
-		    	  
-		    		  ArrayList<DemeritPoint> rpoints = new ArrayList<DemeritPoint>();
-		   
-		    		  for(int i=0;i<readPoints.length/2;i++) {
-		    			  rpoints.add(new DemeritPoint(readPoints[i*2],Integer.parseInt(readPoints[i*2+1])));
-		    		  }
-		    		  boolean isSus = (values[5].equals("true"));
-		    	 Person readPerson = new Person(values[0], values[1], values[2], values[3], values[4], rpoints, isSus);
-		    	  
-		    	  people.add(readPerson);
-		      }
-		      myReader.close();
-		    } catch (FileNotFoundException e) {
-		      System.out.println("An error occurred.");
-		      e.printStackTrace();
-		      return "Read File Fail";
-		    }
-		File deleteOld = new File(filename);
-		deleteOld.delete();
-		for(Person p : people) {
-			if(p.personID.equals(personID)) {
-				p.demeritPoints.add((point));
-			}
-			writePerson(p);
-		}
+	public String addDemeritPoint(String personID, Date date, Integer points) {
 		return "Success";
 	}
 	

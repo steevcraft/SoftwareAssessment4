@@ -180,7 +180,7 @@ public class FileManager {
 		return "Success";
 	}
 	
-	public String addDemeritPoint(String personID, DemeritPoint point) {
+	public String addDemeritPoint(String personID, String date, Integer points) {
 		ArrayList<Person> people = new ArrayList<Person>();
 		try {
 		      Scanner myReader = new Scanner(new FileReader(filename));
@@ -209,7 +209,7 @@ public class FileManager {
 		deleteOld.delete();
 		for(Person p : people) {
 			if(p.personID.equals(personID)) {
-				p.demeritPoints.add((point));
+				p.demeritPoints.add(new DemeritPoint(date, points));
 			}
 			writePerson(p);
 		}
