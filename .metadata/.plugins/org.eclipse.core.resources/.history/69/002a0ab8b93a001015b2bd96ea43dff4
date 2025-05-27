@@ -1,0 +1,7 @@
+package RoadRegistry;
+
+public class DemeritPoint {
+	String date;
+	int points;
+	public DemeritPoint
+}

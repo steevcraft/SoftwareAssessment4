@@ -1,0 +1,48 @@
+package DataStorage;
+
+import java.util.Date;
+
+import RoadRegistry.Person;
+
+public class FileManager {
+	
+	String filename;
+	public FileManager() {
+		
+	}
+	
+	public FileManager(String filename) {
+		this.filename = filename;
+	}
+	
+	public void setFileName(String filename) {
+		this.filename = filename;
+	}
+	
+	public Person readPersonByPersonId(String personID) {
+		
+		Person person = new Person();
+		
+		return person;
+	}
+	
+	public String writeNewPerson(Person person) {
+		
+		return "Success";
+	}
+	
+	public boolean personExists(String personID) {
+		return true;
+	}
+	
+	public String updatePerson(Person person) {
+		
+		return "Success";
+	}
+	
+	public String addDemeritPoint(String personID, Date date, Integer points) {
+		return "Success";
+	}
+	
+	
+}

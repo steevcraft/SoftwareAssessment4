@@ -1,7 +1,12 @@
 package DataStorage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 
+import RoadRegistry.DemeritPoint;
 import RoadRegistry.Person;
 
 public class FileManager {
@@ -26,8 +31,40 @@ public class FileManager {
 		return person;
 	}
 	
+	/*
+	private String personID;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String birthdate;
+	private HashMap<Date, Integer> demeritPoints;
+	private boolean isSuspended;
+	*/
 	public String writeNewPerson(Person person) {
-		
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
+			writer.write(person.personID+",");
+			writer.write(person.firstName+",");
+			writer.write(person.lastName+",");
+			writer.write(person.address+",");
+			writer.write(person.birthdate+",");
+			if(person.isSuspended) {
+				writer.write("true,");
+			}else {
+				writer.write("false,");
+			}
+			writer.newLine();;
+			for(DemeritPoint point : person.demeritPoints) {
+				writer.write(point.date + "," + Integer.toString(point.points)+",");
+			}
+			writer.newLine();
+			
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "Failed";
+		}
 		return "Success";
 	}
 	

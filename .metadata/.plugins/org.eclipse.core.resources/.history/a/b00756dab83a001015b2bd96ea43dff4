@@ -1,0 +1,30 @@
+package RoadRegistry;
+
+import java.util.HashMap;
+import java.util.Date;
+
+public class Person {
+	public String personID;
+	public String firstName;
+	public String lastName;
+	public String address;
+	public String birthdate;
+	public HashMap<Date, Integer> demeritPoints;
+	public boolean isSuspended;
+	
+	public String addPerson() {
+		
+		return "Success";
+	}
+	
+	public String updatePersonalDetails() {
+		
+		return "Success";
+	}
+	
+	public String addDemeritPoints() {
+		
+		return "Success";
+	}
+
+}

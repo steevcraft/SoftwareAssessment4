@@ -1,0 +1,84 @@
+package DataStorage;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
+import java.util.HashMap;
+
+import RoadRegistry.Person;
+
+public class FileManager {
+	
+	String filename;
+	public FileManager() {
+		
+	}
+	
+	public FileManager(String filename) {
+		this.filename = filename;
+	}
+	
+	public void setFileName(String filename) {
+		this.filename = filename;
+	}
+	
+	public Person readPersonByPersonId(String personID) {
+		
+		Person person = new Person();
+		
+		return person;
+	}
+	
+	/*
+	private String personID;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String birthdate;
+	private HashMap<Date, Integer> demeritPoints;
+	private boolean isSuspended;
+	*/
+	public String writeNewPerson(Person person) {
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
+			writer.write(person.personID+",");
+			writer.write(person.firstName+",");
+			writer.write(person.lastName+",");
+			writer.write(person.address+",");
+			writer.write(person.birthdate+",");
+			if(person.isSuspended) {
+				writer.write("true,");
+			}else {
+				writer.write("false,");
+			}
+			writer.newLine();;
+			for(Date key : person.demeritPoints.keySet()) {
+				writer.write(key.toString() + "," + person.demeritPoints.get(key).toString()+",");
+			}
+			writer.newLine();
+			
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "Failed";
+		}
+		return "Success";
+	}
+	
+	public boolean personExists(String personID) {
+		return true;
+	}
+	
+	public String updatePerson(Person person) {
+		
+		return "Success";
+	}
+	
+	public String addDemeritPoint(String personID, Date date, Integer points) {
+		return "Success";
+	}
+	
+	
+}
