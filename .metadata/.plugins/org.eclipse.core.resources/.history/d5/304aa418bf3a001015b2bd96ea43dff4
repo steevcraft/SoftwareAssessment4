@@ -171,7 +171,8 @@ public class FileManager {
 		File deleteOld = new File(filename);
 		deleteOld.delete();
 		for(Person p : people) {
-			if(p.personID.equals(person.personID)) {
+			System.out.println(p.personID);
+			if(p.personID == person.personID) {
 				writePerson(person);
 				continue;
 			}

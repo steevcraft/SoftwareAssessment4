@@ -1,2 +1,0 @@
-person2,John,Smith,100 Road Street, Melbourne,10-10-2001,false,
-Yesterday,7,

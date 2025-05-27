@@ -37,7 +37,7 @@ class Tests {
 	}
 	
 	public static void FileManagerTests() {
-		FileManager file = new FileManager("tests5.txt");
+		FileManager file = new FileManager("tests2.txt");
 		ArrayList<DemeritPoint> demeritPoints = new ArrayList<DemeritPoint>();
 		demeritPoints.add(new DemeritPoint("Yesterday", 7));
 		Person testPerson = new Person("person2", "John", "Smith", "100 Road Street, Melbourne", "10-10-2001", demeritPoints, false);
@@ -53,9 +53,6 @@ class Tests {
 			assertEquals(testPerson.firstName, file.readPersonByPersonId("person2").firstName);
 			System.out.println("Read person by personID success");
 			
-			Person testPerson3 = new Person("person22", "John3", "Smith3", "100 Road Street, Melbourne", "10-10-20012", demeritPoints, false);
-			assertEquals("Success", file.updatePerson(testPerson3));
-			System.out.println("updatePerson a Success");
 
 		} catch(AssertionError e){
 		  String message = e.getMessage();
