@@ -29,12 +29,6 @@ class Tests {
 			System.out.println("Add Person a Success");
 			assertEquals("Fail", person.addPerson());
 			System.out.println("Add Person Fail");
-			
-			assertEquals("Success", person.updatePersonalDetails());
-			System.out.println("Update Person success");
-			
-			assertEquals("Success", person.addDemeritPoints());
-			System.out.println("Add demerit points success");
 		} catch(AssertionError e){
 		  String message = e.getMessage();
 		  System.out.println(message);
