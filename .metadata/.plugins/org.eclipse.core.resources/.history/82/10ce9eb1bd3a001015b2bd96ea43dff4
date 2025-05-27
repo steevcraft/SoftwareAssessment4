@@ -96,22 +96,7 @@ public class FileManager {
 	}
 	
 	public boolean personExists(String personID) {
-		try {
-		      Scanner myReader = new Scanner(new FileReader(filename));
-		      while (myReader.hasNextLine()) {
-		    	  String[] values = myReader.nextLine().split(",");
-		    	  String[] readPoints = myReader.nextLine().split(",");
-		    	  if(values[0].equals(personID)) {
-		    		  return true;
-		    	  }
-		    	  
-		      }
-		      myReader.close();
-		    } catch (FileNotFoundException e) {
-		      System.out.println("An error occurred.");
-		      e.printStackTrace();
-		    }
-		return false;
+		return true;
 	}
 	
 	public String updatePerson(Person person) {

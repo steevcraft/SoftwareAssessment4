@@ -52,7 +52,6 @@ class Tests {
 			System.out.println("Read Person By PersonID for non-existent Person Success");
 			assertEquals(testPerson.firstName, file.readPersonByPersonId("person2").firstName);
 			System.out.println("Read person by personID success");
-			
 
 		} catch(AssertionError e){
 		  String message = e.getMessage();
